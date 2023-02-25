@@ -1,0 +1,655 @@
+*{
+	margin: 0;
+	padding: 0;
+ 	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+
+.tema{
+	position: absolute;
+	top: 57px;
+	left: 89%;
+}
+#theme{
+	position: relative;
+	width: 60px;
+	height: 25px;
+	outline: none;
+	-webkit-appearance: none;
+	background-color: white;
+	border-radius: 30px;
+	border: 2px solid #494949;
+}
+#theme::before{
+	content: "";
+	position: absolute;
+	background-color: transparent;
+	box-shadow: -5px 3.5px #494949;
+	height: 17px;
+	width: 17px;
+	border-radius: 25px;
+	border: none;
+	top: -1px;
+	left: 40px;
+	transition: all 1s;
+}
+#theme:checked{
+	background-color: #494949;
+	border: 2px solid black;
+}
+
+#theme:checked::before{
+	background-color: #EED484;
+	box-shadow: none;
+	transform: translateX(-37px) translateY(3px);
+	transition: all 1s;
+}
+
+body{
+	overflow-x: hidden;
+	/*background-image: url(../img/fondo.png);*/
+	background-repeat: repeat;
+	background-size: 100%;
+}
+.bodydark{
+	background-color: #494949;
+}
+.bodylight{
+	background-color: #E3E3E3;
+}
+.contenedor{
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 80px auto auto auto;
+	display: grid;
+	grid-gap: 5px;
+	margin: 30px 5%;
+	grid-template-areas: "header header header"
+						"main main main"
+						"article1 article1 article1"
+						"article2 article2 article2";
+}
+
+/*
+MENU
+*/
+
+.header{
+	grid-area: header;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-areas: "logo menu menu redes";
+}
+.headerdark{
+	background: #313131;
+}
+.headerlight{
+	background: #F0F0F0;
+}
+
+/*
+LOGO
+*/
+
+.logo{
+	grid-area: logo;
+}
+.logo img{
+	margin: 15px 75px;
+	height: 50px;
+}
+
+/*
+NAVEGACIÓN
+*/
+
+.menu{
+	grid-area: menu;
+	text-align: center;
+}
+.menu > ul > li{
+	margin: 20px 1%;
+	display: inline-block;
+	padding: 10px 5%;
+	position: relative;
+}
+
+.menu > ul > li > a{
+	font-size: large;
+}
+.menudark > ul > li > a{
+	color: #fff;
+}
+.menulight > ul > li > a{
+	color: #313131;
+}
+
+.menu li a:hover{
+	color: red;
+	transition: all 0.3s;
+}
+.menu li a i:hover{
+	color: red;
+	transition: all 0.3s;
+}
+
+/*
+SUBMENU
+*/
+
+.submenu li a:hover i{
+	color: red;
+	transition: all 0.3s;
+}
+.submenu{
+	position: absolute;
+	width: 90%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.0s;
+}
+.submenudark{
+	background: rgba(49, 49, 49, 0.7);
+}
+.submenulight{
+	background: rgba(240, 240, 240, 0.7);
+}
+.fa-fighter-jet{
+	padding-top: 20px;
+}
+.submenu li a{
+	display: block;
+	padding: 10%;
+	font-family: serif;
+	text-decoration: none;
+}
+.submenudark li a{
+	color: #fff;
+}
+.submenulight li a{
+	color: #313131;
+}
+.submenu li i{
+	display: inline-flex;
+	padding-right: 10%;
+	padding-left: 0;
+}
+.submenulight li i{
+	color: #fff;
+}
+.submenulight li i{
+	color: #313131;
+}
+.menu li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
+}
+
+/*
+REDES
+*/
+
+.redes{
+	margin-left: 10vw;
+}
+.redes i{
+	padding: 10px;
+}
+.redesdark i{
+	color: #ffffff;
+}
+.redeslight i{
+	color: #313131;
+}
+.fa-instagram:hover{
+	background-image: linear-gradient(210deg,rgba(131,58,180,1) 14%, rgba(253,29,29,1) 74%, rgba(252,176,69,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: 900;
+	transition: all .5s;
+}
+.fa-twitter:hover{
+	color:  #00acee;
+	transition: all .5s;
+}
+.fa-facebook-square:hover{
+	color: #3b5998;
+	transition: all .5s;
+}
+.fa-youtube-play:hover{
+	color: #c4302b;
+	transition: all .5s;
+}
+
+/*
+MAIN
+*/
+.rojo{
+	color: red;
+	background-color: yellow;
+}
+.main{
+	grid-area: main;
+	font-size: 3.9rem;
+	text-align: center;
+	font-family: bold;
+}
+
+.maindark{
+	color: #fff;
+}
+.mainlight{
+	color: #313131;
+}
+
+/*
+ARTÍCULOS
+*/
+
+.article{
+	padding: 10px;
+	float: left;
+	text-align: justify;
+	margin: 10px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-size: large;
+}
+.articledark{
+	background: #313131;
+	color: #fff;
+}
+.articlelight{
+	background: #fff;
+}
+.a1{
+	grid-area: article1;
+}
+.a2{
+	grid-area: article2;
+}
+
+/*Nosotros*/
+#nosotros{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.article img{
+	width: 33%;
+	float: left;
+	margin: 10px;
+}
+
+/*Inicio*/
+
+/*
+PARALLAX
+*/
+
+.parallax{
+	background: #D6D6D6 fixed no-repeat 50% 50%;
+	background-size: cover;
+}
+#pheader{
+	height: 1000px;
+	background-image: url(https://cnnespanol.cnn.com/wp-content/uploads/2021/10/http___cdn.cnn_.com_cnnnext_dam_assets_211012172931-01-hermeus-hypersonic-airplane.jpg?quality=100&strip=info);
+}
+#pmain{
+	height: 400px;
+	background-image: url(https://fly-news.es/wp-content/uploads/CRAIC-CR929-990x619.jpg);
+}
+#psection{
+	height: 1000px;
+	background-image: url(https://s3.amazonaws.com/businessinsider.mx/wp-content/uploads/2020/08/04115052/Avio%CC%81n-Virgin-Galactic-1280x620.jpg);
+}
+
+/*
+MENU
+*/
+
+#pnavegacion{
+	position: fixed;
+	width: 100vw;
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+#plogo img{
+	width: 150px;
+}
+#pmenu{
+	text-align: center;
+	font-size: large;
+}
+#pmenu > ul{
+	margin-top: 90px;
+	display: flex;
+}
+#pmenu > ul > li > a{
+	color: #fff;
+	padding: 40px;
+}
+#psubmenu{
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.0s;
+}
+#psubmenu li{
+	padding-top: 20px;
+}
+#psubmenu li a{
+	color: #FFF;
+	padding-top: 10px;
+	margin-top: 50px;
+}
+#psubmenu li i{
+	color: #ffffff;
+}
+#predes{
+	display: flex;
+	flex-direction: column;
+}
+.predes i{
+	color: #ffffff;
+	padding: 10px;
+}
+/*
+HOVER
+MENU
+*/
+
+#pmenu li a:hover{
+	color: red;
+	transition: all 0.3s;
+}
+#pmenu li a i:hover{
+	color: red;
+	transition: all 0.3s;
+}
+#pmenu li a:hover i{
+	color: red;
+	transition: all 0.3s;
+}
+#pmenu li:hover #psubmenu{
+	visibility: visible;
+	opacity: 1;
+}
+
+/*Contacto*/
+
+#formulario{
+	margin-top: 50px;
+	background: #1A1A1A;
+	width: 500px;
+	padding: 50px;
+}
+
+#formulario input[type = "text"]{
+	width: 300px;
+	margin: 20px;
+	background: none;
+	text-align: center;
+	border: 2px solid #ffffff;
+	padding: 17px;
+	color: #ffffff;
+	outline: none;
+	border-radius: 25px;
+	transition: .7s;
+	font-family: sans-serif;
+}
+#formulario input[type = "text"]:focus{
+	width: 400px;
+	border-color: #ff0000;
+	font-size: medium;
+}
+#formulario input[type = "submit"]{
+	background: none;
+	border: 2px solid #ff0000;
+	width: 150px;
+	padding: 17px;
+	color: #ffffff;
+	border-radius: 25px;
+	font-size: medium;
+}
+#formulario input[type = "submit"]:hover{
+	background: #ff0000;
+}
+#descripcion{
+	width: 300px;
+	height: 100px;
+	padding: 15px;
+	margin: 20px;
+	border: 2px solid #ffffff;
+	outline: none;
+	background: none;
+	text-align: center;
+	color: #ffffff;
+	border-radius: 25px;
+	transition: .7s;
+	resize: none;
+	font-family: sans-serif;
+	font-size: medium;
+	overflow-y: hidden;
+}
+#descripcion:focus{
+	border-color: #ff0000;
+	width: 400px;
+}
+#descripcion:hover{
+	overflow-y: auto;
+}
+
+/*Diseños*/
+
+.mainimg{
+	margin-top: 100px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 200px);
+}
+.mainimg a{
+	visibility: hidden;
+	opacity: 0;
+	color: red;
+	transition: all 0.7s;
+}
+.mainimg div:hover a{
+	visibility: visible;
+	opacity: 1;
+}
+.mainimg div{
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/*Aviones*/
+
+#mainaviones{
+	grid-template-areas: "a1 a1 b1 b1"
+						"c1 c1 c1 d1"
+						"c1 c1 c1 d1"
+						"e1 e1 f1 f1";
+}
+
+#a1{
+	grid-area: a1;
+	background-image: url(https://img.freepik.com/vektoren-kostenlos/luftfahrt-industriell-dimensionierte-zeichnung-blaupause-der-umriss-flugzeug-oberseite-und-vorderansichten-realistisch_1284-31742.jpg?size=626&ext=jpg);
+}
+#b1{
+	grid-area: b1;
+	background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/2e/USAF_F-15C_fires_AIM-7_Sparrow.jpg);
+}#c1{
+	grid-area: c1;
+	background-image: url(https://i1.wp.com/www.anfrix.com/wp-content/uploads/2019/09/Avion-U-2-1.jpeg);
+}
+#d1{
+	grid-area: d1;
+	background-image: url(https://i.pinimg.com/474x/a4/ac/8f/a4ac8f68d6c2026a073b0e15f3b6faf7.jpg);
+}
+#e1{
+	grid-area: e1;
+	background-image: url(https://as01.epimg.net/diarioas/imagenes/2021/03/14/actualidad/1615731647_802490_1615732179_noticia_normal_recorte1.jpg);
+}
+#f1{
+	grid-area: f1;
+	background-image: url(https://image.shutterstock.com/image-illustration/dassault-mirage-2000-aircraft-drawing-260nw-1900943566.jpg);
+}
+
+/*Drones*/
+
+#maindrones{
+	grid-template-areas: "a a b b"
+						"a a c c"
+						"d d c c"
+						"d d e e";
+}
+#a{
+	grid-area: a;
+	background-image: url(https://cuadernosdeseguridad.com/wp-content/uploads/2019/10/drones.jpg);
+}
+#b{
+	grid-area: b;
+	background-image: url(https://cdn.andro4all.com/files/2021/07/Las-mejores-6-apps-para-drones-de-Android-aprende-a-volarlos-y-entrena-con-ellas.jpg);
+}
+#c{
+	grid-area: c;
+	background-image: url(https://www.nationalgeographic.com.es/medio/2016/01/13/26c76683tamano_del_dron_867x816.png);
+}
+#d{
+	grid-area: d;
+	background-image: url(https://filmeventos.com/wp-content/uploads/2018/01/Operador-de-Dron-en-Vigo.jpg);
+}
+#e{
+	grid-area: e;
+	background-image: url(https://www.webconsultas.com/sites/default/files/styles/rrss_wide/public/articulos/drones-aliados-salud_0.jpg);
+}
+
+/*Easter Egg*/
+
+#pantalla{
+	width: 100%;
+	height: 100vh;
+	background-color: #C2D7FF;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#cargando{
+	width: 350px;
+	display: flex;
+	flex-wrap: wrap;
+	animation: rotate 7s linear infinite;
+}
+@keyframes rotate{
+	to{
+		transform: rotate(360deg);
+	}
+}
+#cargando img{
+	width: 50px;
+	height: 50px;
+	margin: 30px;
+	filter: invert(70%);
+}
+
+#cargando img:nth-child(1){
+
+}
+#cargando img:nth-child(2){
+
+}
+#cargando img:nth-child(3){
+	transform: rotate(90deg);
+}
+#cargando img:nth-child(4){
+	transform: rotate(-90deg);
+}
+#cargando a:nth-child(5){
+	filter: invert(100%) saturate(200%);
+}
+#cargando img:nth-child(6){
+	transform: rotate(90deg);
+}
+#cargando img:nth-child(7){
+	transform: rotate(-90deg);
+}
+#cargando img:nth-child(8){
+	transform: rotate(180deg);
+}
+#cargando img:nth-child(9){
+	transform: rotate(180deg);
+}
+
+/*
+RESPONSIVE
+*/
+
+/*	850px - 1100px	*/
+
+@media only screen and (max-width: 1100px){
+.header{
+	grid-template-areas: "logo menu menu menu";
+}
+.redes{
+	display: none;
+}
+.predes{
+	display: none;
+}
+}
+
+/*	460px - 850px	*/
+
+@media only screen and (max-width: 850px){
+.contenedor{
+	margin-right: 0;
+	margin-left: 0;
+}
+.header{
+	grid-template-areas: "menu menu menu menu";
+}
+.logo{
+	display: none;
+}
+#plogo{
+	display: none;
+}
+.article{
+	margin: 10px 0;
+}
+#pmenu > ul > li > a{
+	color: #fff;
+	padding: 30px;
+}
+/*Diseños*/
+.mainimg{
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(5, 200px);
+}
+/*Aviones*/
+#mainaviones{
+		grid-template-areas: "a1 b1"
+							"c1 c1"
+							"c1 c1"
+							"d1 d1"
+							"e1 f1";
+	}
+/*Drones*/
+#maindrones{
+		grid-template-areas: "a b"
+							"c c"
+							"c c"
+							"d d"
+							"e e";
+	}
+}
+
+/*	- 460px		*/
+
+@media only screen and (max-width: 460px){
+	.nosotros a{
+		display: none;
+	}
+}

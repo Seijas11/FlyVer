@@ -1,0 +1,135 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: skyblue;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#atras{
+	background-color: darkgrey;
+	border-radius: 20px;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 2%;
+	left: 2%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+#atras div:nth-child(1){
+	transform: rotate(45deg);
+	background-color: transparent;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	box-shadow: -5px 5px skyblue;
+}
+
+#principal{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 50px;
+	height: 50px;
+	background-color: #FC7F3D;
+	border-radius: 50px;
+	animation: abajo 1s linear infinite;
+}
+@keyframes abajo{
+	0%{
+		transform: translateY(50px);
+	}
+	50%{
+		transform: translateY(-50px);
+	}
+	100%{
+		transform: translateY(50px);
+	}
+
+}
+@keyframes rotar{
+	0%{
+		rotate: 0;
+	}
+	100%{
+		rotate: 360deg;
+	}
+}
+
+#principal div{
+	background-color: transparent;
+	width: 10px;
+	height: 80%;
+	border-radius: 50px;
+}
+#principal div:nth-child(1){
+	box-shadow: 7px 0px #9E491C;
+}
+#principal div:nth-child(2){
+	box-shadow: -7px 0px #9E491C;
+}
+
+
+#suelo{
+	width: 100vw;
+	height: 200px;
+	background-color: sandybrown;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#suelo div{
+	background-color: transparent;
+	width: 20vw;
+	height: 180px;
+	border-radius: 200px;
+}
+#suelo div:nth-child(1){
+	border: 2px solid orangered;
+	transform: translateX(-11vw);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+} 
+#suelo div:nth-child(2){
+	border: 2px solid orangered;
+	transform: translateX(11vw);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+} 
+
+#suelo div:nth-child(1) div{
+	height: 300px;
+	width: 10px;
+	background-color: orangered;
+	border: none;
+	transform: translateX(1.5vw);
+	margin-bottom: 400px;
+	display: block;
+	box-shadow: 98.5vw 0 orangered;
+}
+#suelo div:nth-child(1) div div:nth-child(1){
+	height: 100px;
+	width: 10px;
+	background-color: white;
+	transform: translateY(-50px);
+	margin-left: 5px;
+	box-shadow: 97.5vw 0 white;
+}
+#suelo div:nth-child(1) div div:nth-child(2){
+	height: 10px;
+	width: 100px;
+	background-color: red;
+	transform: translateY(-460px);
+	margin-left: 10px;
+	box-shadow: 87.7vw 0 red;
+}
+
