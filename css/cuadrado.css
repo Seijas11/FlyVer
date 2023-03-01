@@ -1,3 +1,11 @@
+:root{
+	--finalY: 50px;
+	--finalX: 0px;
+	--midY: -50px;
+	--midX:0px;
+}
+
+
 body{
 	display: flex;
 	justify-content: center;
@@ -7,6 +15,11 @@ body{
 	height: 100vh;
 	overflow-x: hidden;
 	overflow-y: hidden;
+}
+
+#fuerza::-webkit-slider-runnable-track {
+	background: linear-gradient(-90deg,rgb(255, 60, 0),yellow,rgb(62, 128, 0));
+	border-radius: 50px;
 }
 
 #atras{
@@ -38,17 +51,17 @@ body{
 	height: 50px;
 	background-color: #FC7F3D;
 	border-radius: 50px;
-	animation: abajo 1s linear infinite;
+	animation: pelota 1s linear infinite;
 }
-@keyframes abajo{
+@keyframes pelota{
 	0%{
 		transform: translateY(50px);
 	}
 	50%{
-		transform: translateY(-50px);
+		transform: translate(var(--midX),var(--midY));
 	}
 	100%{
-		transform: translateY(50px);
+		transform: translate(var(--finalX),var(--finalY));
 	}
 
 }
@@ -98,13 +111,7 @@ body{
 	align-items: center;
 	justify-content: center;
 } 
-#suelo div:nth-child(2){
-	border: 2px solid orangered;
-	transform: translateX(11vw);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-} 
+
 
 #suelo div:nth-child(1) div{
 	height: 300px;
@@ -114,7 +121,6 @@ body{
 	transform: translateX(1.5vw);
 	margin-bottom: 400px;
 	display: block;
-	box-shadow: 98.5vw 0 orangered;
 }
 #suelo div:nth-child(1) div div:nth-child(1){
 	height: 100px;
@@ -122,7 +128,6 @@ body{
 	background-color: white;
 	transform: translateY(-50px);
 	margin-left: 5px;
-	box-shadow: 97.5vw 0 white;
 }
 #suelo div:nth-child(1) div div:nth-child(2){
 	height: 10px;
@@ -130,6 +135,5 @@ body{
 	background-color: red;
 	transform: translateY(-460px);
 	margin-left: 10px;
-	box-shadow: 87.7vw 0 red;
 }
 
