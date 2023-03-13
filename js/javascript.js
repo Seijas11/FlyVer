@@ -25,7 +25,6 @@ function theme() {
 /* Fin del modo oscuro-claro */
 
 /* Boton de lanzar */
-
 var power=0;
     var time;
     var tirado=false;
@@ -41,16 +40,38 @@ var power=0;
         
     }
 
+
 	function movimiento(){
+		
 		tirado = false;
             console.log(power);
-			document.documentElement.style.setProperty('--midY',-power*0.2 + "vw");
-			document.documentElement.style.setProperty('--midX',-power*0.3 + "vw");
-			document.documentElement.style.setProperty('--finalY',-power*0.13 + "vw");
-			document.documentElement.style.setProperty('--finalX',-power*0.7 + "vw");
+			document.documentElement.style.setProperty('--firstY',-power*0.2 + "vw");
+			document.documentElement.style.setProperty('--firstX',-power*0.2 + "vw");
+
+			document.documentElement.style.setProperty('--secondY',-power*0.3 + "vw");
+			document.documentElement.style.setProperty('--secondX',-power*0.3 + "vw");
+
+			document.documentElement.style.setProperty('--thirdY',-power*0.35  + "vw");
+			document.documentElement.style.setProperty('--thirdX',-power*0.4 + "vw");
+
+			document.documentElement.style.setProperty('--forthY',-power*0.3 + "vw");
+			document.documentElement.style.setProperty('--forthX',-power*0.5 + "vw");
+
+			document.documentElement.style.setProperty('--fifthY',-power*0.2 + "vw");
+			document.documentElement.style.setProperty('--fifthX',-power*0.6 + "vw");
+
+			document.documentElement.style.setProperty('--finalY',-power*0 + "vw");
+			document.documentElement.style.setProperty('--finalX',-power*0.8 + "vw");
+
+			document.querySelector('#principal').style='display: flex; align-items: center; justify-content: space-between; transform: translateY(100px); width: 50px; height: 50px; background-color: #FC7F3D; border-radius: 50px; animation: pelota 2.5s linear 1;';
             clearInterval(time);
+			setTimeout(function(){
+				document.querySelector('#principal').style='display: flex; align-items: center; justify-content: space-between; transform: translateY(100px); width: 50px; height: 50px; background-color: #FC7F3D; border-radius: 50px;';
+			},2500);
+			
             power=0;
 	}
+
 
     function fixStart(){
 		let finalPower;
